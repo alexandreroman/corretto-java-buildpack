@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv=" Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corretto Java Buildpack</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="container">
+    <img src="coffee-cup.png" id="coffeecup"/>
+    <h1>Corretto Java Buildpack</h1>
+    <p>This <a href="https://spring.io/projects/spring-boot">Spring Boot</a> app is running on
+        <a href="https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/what-is-corretto-8.html">
+            Amazon Corretto JRE</a> and deployed to <a href="https://www.cloudfoundry.org">Cloud Foundry</a>.</p>
+    <h2>JVM system properties</h2>
+    <div id="systemprops"><p>
+        <pre th:text="${systemProps}"/>
+        </p>
+    </div>
+    <h2>Access log</h2>
+    <div id="accesslog">
+        <ul th:each="log: ${logs}">
+            <li><span th:text="${#dates.format(log.timestamp,'YYYY/MM/dd HH:mm:ss')}"/>
+                <span th:text="${log.userAgent}"/></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>Copyright &copy; 2018 Pivotal Software Inc.</p>
+    </div>
+</div>
+
+<a href="https://github.com/alexandreroman/corretto-demo"><img
+        style="position: absolute; top: 0; right: 0; border: 0;"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
+        alt="Fork me on GitHub"></a>
+</body>
+</html>

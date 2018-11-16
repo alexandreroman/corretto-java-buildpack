@@ -1,0 +1,48 @@
+body {
+    font-family: 'Eczar', serif;
+    background: #232F3E;
+    color: white;
+    margin: auto;
+    max-width: 800px;
+}
+
+#container {
+    margin: 1em;
+}
+
+a {
+    color: lightblue;
+}
+
+#systemprops {
+    border: 1px solid #666;
+    background: #333;
+    color: white;
+    overflow: auto;
+    width: 100%;
+    padding: 0 0.5em;
+}
+
+#systemprops pre {
+    font-family: monospace;
+    font-size: 100%;
+}
+
+#accesslog ul {
+    margin: 0;
+    padding: 0;
+}
+
+#accesslog li {
+    font-family: monospace;
+    list-style-type: none;
+    border-bottom: 1px solid #555;
+    margin: 0 0 0.5em 0;
+    padding: 0 0 0.6em 0;
+}
+
+#footer {
+    margin: 2em 0;
+    color: darkgray;
+    font-size: 80%;
+}

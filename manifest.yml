@@ -1,0 +1,14 @@
+---
+applications:
+- name: corretto-java-buildpack
+  path: target/corretto-java-buildpack.jar
+  memory: 1G
+  random-route: true
+  buildpacks:
+  # We are actually reusing the Cloud Foundry Java Buildpack,
+  # since Amazon Corretto is an OpenJDK build.
+  - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    # Tell Java Buildpack to use a custom repository,
+    # where Amazon Corretto is published.
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { repository_root: "https://s3.eu-west-3.amazonaws.com/corretto-repo-demo/corretto-jre" } }'
